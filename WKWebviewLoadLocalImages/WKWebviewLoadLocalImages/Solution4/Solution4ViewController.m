@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"方案4：使用base64图片数据";
+    self.title = @"方案4：html文件和图片放在同一个目录下";
     [self.view addSubview:self.webView];
 
     NSURL *bundlePath = [[NSBundle mainBundle] URLForResource:@"index4" withExtension:@"html"];
@@ -66,6 +66,7 @@
         NSURL *localFileURL = [NSURL fileURLWithPath:htmlPath];
         dispatch_async(dispatch_get_main_queue(), ^{
             // 下面两种方式都可以正常加载图片
+            // loadRequest可以正常加载
 //            [self.webView loadRequest:[NSURLRequest requestWithURL:localFileURL]];
             
             /*

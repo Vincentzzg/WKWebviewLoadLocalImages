@@ -10,7 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 方案3：图片数据base64，然后放到img标签的src中
+/// 方案3：使用base64图片数据
+/// 图片数据base64，然后放到img标签的src中
 @interface Solution3ViewController : UIViewController
 
 @end

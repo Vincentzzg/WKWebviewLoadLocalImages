@@ -60,8 +60,8 @@
     /* ======================= 第二张图，沙盒cache目录下 ================================*/
 
     NSString *imageUrl2 = [imageurlArray objectAtIndex:1];
-    NSString *cachesDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
     // 只有tmp文件夹中的图片可以加载，其他目录下的图片都不能加载
+    NSString *cachesDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
 //    NSString *libDir = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
 
     NSString *localPath2 = [cachesDir stringByAppendingPathComponent:[imageUrl2 md5]];
@@ -85,9 +85,6 @@
         NSLog(@"加载的html:\n%@\n", html);
 //        // 加载htmlString
         [self.webView loadHTMLString:html baseURL:[NSURL URLWithString:@"file://"]];
-        
-        // loadFile方法
-//        [self.webView loadFileURL:htmlFilePath allowingReadAccessToURL:[localPathURL URLByDeletingLastPathComponent]];
     });
 }
 
